@@ -13,3 +13,4 @@
 11. Delete at
 12. Switch
 13. Linked list palindrome
+14. CPython #0: Python lists
