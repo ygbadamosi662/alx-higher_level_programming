@@ -5,3 +5,4 @@
 0x1A. C - Hash tables
 0x0A. Python - Inheritance
 0x0B. Python - Input/Output
+0x0C-python-almost_a_circle
