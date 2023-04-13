@@ -1,4 +1,4 @@
-#!/usr/bin/env node
+#!/usr/bin/node
 const fs = require('fs');
 const contentA = fs.readFile(process.argv[2]);
 const contentB = fs.readFile(process.argv[3]);
