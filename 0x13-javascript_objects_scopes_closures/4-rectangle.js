@@ -20,12 +20,11 @@ module.exports = class Rectangle {
       ww = ww + 1;
     }
   }
-  
   rotate () {
+    let a = this.width;
     this.width = this.height;
-    this.height = this.width;
+    this.height = a;
   }
-  
   double () {
     this.width = 2 * this.width;
     this.height = 2 * this.width;
