@@ -1,7 +1,3 @@
 #!/usr/bin/node
-const Rectangle = require('./4-rectangle.js');
-const r1 = new Rectangle(2, 4);
-r1.rotate();
-console.log(r1.print());
-r1.double();
-console.log(r1.print());
+const count = require('./7-occurrences.js').nbOccurences;
+console.log(count([1, 1, 1, 2, 5, 63, 2, 1], 1));
