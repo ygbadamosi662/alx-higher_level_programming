@@ -1,4 +1,4 @@
 #!/usr/bin/node
-const Rectangle = require('./1-rectangle');
+const Rectangle = require('./2-rectangle');
 const r1 = new Rectangle(2);
-console.log(r1.height);
+console.log(r1);
