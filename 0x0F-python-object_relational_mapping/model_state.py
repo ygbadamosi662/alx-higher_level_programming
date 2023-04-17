@@ -21,7 +21,7 @@ class State(Base):
     name = Column(String(128), nullable=False)
 
 
-url = 'mysql+mysqldb://root:password@localhost:3306/hbtn_0e_6_usa'
+url = 'mysql://root:password@localhost:3306/hbtn_0e_6_usa'
 
 engine = create_engine(url)
 
