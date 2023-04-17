@@ -10,6 +10,9 @@ if __name__ == "__main__":
     Base = declarative_base()
 
     class State(Base):
+        """
+        Defines a class State
+        """
         __tablename__ = 'states'
 
         id = Column(Integer, primary_key=True, nullable=False,
