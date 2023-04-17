@@ -9,17 +9,17 @@ import sys
 from sqlalchemy.orm import sessionmaker
 
 if __name__ == "__main__":
-    url = 'mysql+mysqldb://{}:{}@localhost/{}'
-    url = url.format(sys.argv[1], sys.argv[2], sys.argv[3])
-    engine = create_engine(url, pool_pre_ping=True)
     Base = declarative_base()
 
     class State(Base):
         __tablename__ = 'states'
 
-        id = Column(Integer, primary_key=True, nullable=False)
+        id = Column(Integer, primary_key=True, nullable=False,
+                    autoincrement=True)
         name = Column(String(128), nullable=False)
 
-        Base.metadate.create_all(engine)
-        Session = sessionmaker(bind=engine)
-        session = Session()
+    url = 'mysql+mysqldb://{}:{}@localhost/{}'
+    url = url.format(sys.argv[1], sys.argv[2], sys.argv[3])
+    engine = create_engine(url, pool_pre_ping=True)
+
+    Base.metadata.create_all(engine)
