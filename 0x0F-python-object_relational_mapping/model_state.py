@@ -5,12 +5,12 @@ Defines a class State an intance of Base = declarative_base()
 import sqlalchemy
 from sqlalchemy.ext.declarative import declarative_base
 from sqlalchemy import create_engine, Column, Integer, String
-from sqlalchemy import sessionmaker
+import sys
 
 if __name__ == "__main__":
-    url = 'mysql+pymysql://<username>:<password>@localhost:'
-    url = url + '3306/<database_name>'
-    engine = create_engine(url)
+    url = 'mysql+mysqldb://{}:{}@localhost/{}'
+    url = url.format(sys.argv[1], sys.argv[2], sys.argv[3])
+    engine = create_engine(url, pool_pre_ping=True)
     Base = declarative_base()
 
     class State(Base):
