@@ -13,7 +13,8 @@ if __name__ == "__main__":
     mydb = MySQLdb.connect(host="localhost", port=3306, user=username,
                            passwd=password, db=dbName)
     cursor = mydb.cursor()
-    quer = "SELECT * FROM cities ORDER BY id ASC"
+    quer = "SELECT cities.id, cities.name, states.name  FROM cities JOIN "
+    quer = quer + "states ON cities.state_id = states.id ORDER BY id ASC"
     cursor.execute(quer)
     cities = cursor.fetchall()
 
