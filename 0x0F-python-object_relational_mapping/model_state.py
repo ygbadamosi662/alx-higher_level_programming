@@ -5,7 +5,6 @@ Defines a class State an intance of Base = declarative_base()
 import sqlalchemy
 from sqlalchemy.ext.declarative import declarative_base
 from sqlalchemy import create_engine, Column, Integer, String
-import sys
 from sqlalchemy.orm import sessionmaker
 
 if __name__ == "__main__":
@@ -18,8 +17,7 @@ if __name__ == "__main__":
                     autoincrement=True)
         name = Column(String(128), nullable=False)
 
-    url = 'mysql://{}:{}@localhost/{}'
-    url = url.format(sys.argv[1], sys.argv[2], sys.argv[3])
-    engine = create_engine(url, pool_pre_ping=True)
+    url = 'mysql://root:password@localhost:3306/hbtn_0e_6_usa'
+    engine = create_engine(url)
 
     Base.metadata.create_all(engine)
