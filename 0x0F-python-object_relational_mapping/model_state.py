@@ -18,7 +18,7 @@ if __name__ == "__main__":
                     autoincrement=True)
         name = Column(String(128), nullable=False)
 
-    url = 'mysql+mysqldb://{}:{}@localhost/{}'
+    url = 'mysql://{}:{}@localhost/{}'
     url = url.format(sys.argv[1], sys.argv[2], sys.argv[3])
     engine = create_engine(url, pool_pre_ping=True)
 
