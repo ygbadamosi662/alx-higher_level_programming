@@ -18,11 +18,11 @@ if __name__ == "__main__":
     Session = sessionmaker(bind=engine)
     session = Session()
 
-    state = session.query(State).first()
-    nothing = State()
+    count = session.query(my_table).count()
 
-    if state != nothing:
+    if count > 0:
+        state = session.query(State).first()
         print("{}: {}".format(state.id, state.name))
 
-    if state == nothing:
+    if count == 0:
         print("Nothing\n")
