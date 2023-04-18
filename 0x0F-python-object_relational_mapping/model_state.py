@@ -22,7 +22,7 @@ class State(Base):
 
 
 if __name__ == "__main__":
-    url = 'mysql+mysqldb://user:password@localhost:3306/database'
+    url = 'mysql+mysqldb://root:password@localhost:3306/database'
 
     engine = create_engine(url)
 
