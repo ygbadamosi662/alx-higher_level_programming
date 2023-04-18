@@ -19,9 +19,10 @@ if __name__ == "__main__":
     session = Session()
 
     state = session.query(State).first()
+    nothing = State()
 
-    if state != State():
+    if state != nothing:
         print("{}: {}".format(state.id, state.name))
 
-    if state == State():
+    if state == nothing:
         print("Nothing\n")
