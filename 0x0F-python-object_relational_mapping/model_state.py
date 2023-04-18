@@ -21,8 +21,9 @@ class State(Base):
     name = Column(String(128), nullable=False)
 
 
-url = 'mysql+mysqldb://user:password@localhost:3306/database'
+if __name__ == "__main__":
+    url = 'mysql+mysqldb://user:password@localhost:3306/database'
 
-engine = create_engine(url)
+    engine = create_engine(url)
 
-Base.metadata.create_all(engine)
+    Base.metadata.create_all(engine)
