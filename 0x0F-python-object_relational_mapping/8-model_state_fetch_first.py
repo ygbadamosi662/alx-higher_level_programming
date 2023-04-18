@@ -22,3 +22,6 @@ if __name__ == "__main__":
 
     if state != State():
         print("{}: {}".format(state.id, state.name))
+
+    if state == State():
+        print("Nothing\n")
