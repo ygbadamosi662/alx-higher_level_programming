@@ -7,5 +7,6 @@ status_code=$(echo "$response" | awk '{print $2}')
 if [ "$status_code" = "200" ]; then
   response_body=$(cat "$response_file")
   echo "$response_body"
+fi
 
 rm "$response_file"
